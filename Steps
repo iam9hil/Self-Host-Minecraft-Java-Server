@@ -14,5 +14,18 @@ Download Proxmox Virtual Environment then use Etcher and flash onto it.
      gateway should be changed to the default gateway aka how you access your router page
 -> Ctrl X -> Y -> Enter
 -> Run: systemctl restart networking
+
+*Do this step on your actual pc and browser.
+Next, access your default gateway (find it under your modem)
+Go to DHCP Reservation and select your server IP and reserve it
 ________________________________________________________________________________________________________________
 
+Now the fun stuff:
+
+- Minecraft Java Server (Fabric) -
+
+https://ubuntu.com/download
+-> Download the .ISO
+
+On Proxmox (left hand side)
+-> local (Device name) > ISO Images > Upload > Select: Ubuntu ISO
