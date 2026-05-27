@@ -4,3 +4,15 @@ Download Etcher and flash into the USB
 Download Proxmox Virtual Environment then use Etcher and flash onto it.
   https://www.proxmox.com/en/downloads/proxmox-virtual-environment
 
+*NOTE: Keep the password safe. When login in, the username is "root" and whatever your password is.
+*NOTE: If you are connected to Ethernet/Switch and it does not detect it. Run: dhclient -v
+
+(if everytime you boot up the server and the ip address doesn't change or stay the same)
+-> Do: nano /etc/network/interfaces
+  -> Change the address and gateway
+     address should be changed to the ip address that was ran on the "dhclient -v"
+     gateway should be changed to the default gateway aka how you access your router page
+-> Ctrl X -> Y -> Enter
+-> Run: systemctl restart networking
+________________________________________________________________________________________________________________
+
