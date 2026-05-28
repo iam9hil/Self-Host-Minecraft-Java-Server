@@ -68,3 +68,33 @@ java -Xmx5G -Xms2G -jar fabric-server-launch.jar nogui
 
 Now the server is running:
 Open another Terminal and typer "ip a" to find the ip address to be used
+
+How to stop: Type "stop" in the game server Terminal
+
+How to make the server run automatically:
+sudo nano /etc/systemd/system/minecraft.service
+| | | | | | | | Enter it in | | | | | | | | |
+V V V V V V V V             V V V V V V V V V
+[Unit]
+Description=Minecraft Fabric Server
+After=network.target
+
+[Service]
+User=minecraft
+WorkingDirectory=/home/minecraft/minecraft-server
+ExecStart=java -Xmx5G -Xms2G -jar fabric-server-launch.jar nogui
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+Run these commands to reload, start on boot, and start it immediately.
+sudo systemctl daemon-reload
+sudo systemctl enable minecraft
+sudo systemctl start minecraft
+
+Check server status:
+sudo systemctl status minecraft
+
+Finally, reboot the server and check if everything works:
+sudo reboot
