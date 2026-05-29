@@ -122,12 +122,32 @@ Server Address to join will be: [public IP address]:25565
 
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-How to add mods?
-
-Manual:
+How to add mods? **Make sure they are .jar files**
 
 Go to your preferred Minecraft Mod distributor: Modrenth/Forge/etc
 
 Look for mods that are compatible with your server: Fabric/NeoForge/Forge AND game version
+
+Download the .jar files
+
+On the Proxmox Ubuntu VM, open the Terminal:
+
+(Stops the minecraft server)
+sudo systemctl stop minecraft 
+
+(Make a new directory to upload the mods)
+mkdir -p /home/minecraft/minecraft-server/mods
+
+(Go back to your actual computer and download the mod that fits your version and type)
+Use this prompt for in the Command Prompt:
+scp C:\Users\Username\Downloads\modfile.jar minecraft@privateIPaddress:/home/minecraft/minecraft-server/mods/
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
 
 
