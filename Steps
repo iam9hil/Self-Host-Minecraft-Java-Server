@@ -115,10 +115,82 @@ scp C:\Users\Username\Downloads\modfile.jar minecraft@privateIPaddress:/home/min
 
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+Useful Commands:
 
+# Start server
+sudo systemctl start minecraft
 
+# Stop server
+sudo systemctl stop minecraft
 
+# Restart server
+sudo systemctl restart minecraft
 
+# Check status
+sudo systemctl status minecraft
 
+# Change gamemode
+/gamemode survival @a
+/gamemode creative @a
+/gamemode adventure @a
 
+# Give operator to a player
+/op playername
 
+# Remove operator
+/deop playername
+
+# Check who is online
+/list
+
+# Seeds can only be set before world generation
+# Edit server.properties
+nano /home/minecraft/minecraft-server/server.properties
+
+# Find this line and change it
+level-seed=yourseedhere
+
+# Then delete the world folder and restart
+rm -rf /home/minecraft/minecraft-server/world
+sudo systemctl restart minecraft
+
+# Stop server
+sudo systemctl stop minecraft
+
+# Go to server folder
+cd /home/minecraft/minecraft-server
+
+# Download new Fabric installer for target version
+wget https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.1/fabric-installer-1.0.1.jar
+
+# Run installer with new version
+java -jar fabric-installer-1.0.1.jar server -mcversion 1.21.1 -downloadMinecraft
+
+# Restart server
+sudo systemctl start minecraft
+
+# Stop server
+sudo systemctl stop minecraft
+
+# Go to server folder
+cd /home/minecraft/minecraft-server
+
+# Download new Fabric installer for target version
+wget https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.1/fabric-installer-1.0.1.jar
+
+# Run installer with new version
+java -jar fabric-installer-1.0.1.jar server -mcversion 1.21.1 -downloadMinecraft
+
+# Restart server
+sudo systemctl start minecraft
+
+# Open the file
+nano /home/minecraft/minecraft-server/server.properties
+
+# Common settings to change
+gamemode=survival
+difficulty=normal
+max-players=20
+server-port=25565
+level-seed=
+pvp=true
